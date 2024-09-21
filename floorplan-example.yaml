@@ -22,6 +22,11 @@ elements:
       action: none
     hold_action:
       action: none
+    card_mod:
+      style: |
+        :host {
+          opacity: {{ states('sensor.sunlight_opacity') }};
+        }
 # LUCI BIANCHE
   - type: image
     entity: light.entita_luce_bianca
