@@ -9,7 +9,7 @@ elements:
     entity: sun.sun
     state_image:
       above_horizon: /local/floorplan/demo/NOME_FILE_GIORNO.png
-      below_horizon: /local/floorplan/transparent.png
+      below_horizon: /local/floorplan/transparent.png #SCARICA QUESTO FILE NELLA PAGINA PRINCIPALE
     style:
       height: 100%
       width: 100%
@@ -25,7 +25,7 @@ elements:
 # LUCI BIANCHE
   - type: image
     entity: light.entita_luce_bianca
-    image: /local/floorplan/transparent.png
+    image: /local/floorplan/transparent.png #SCARICA QUESTO FILE NELLA PAGINA PRINCIPALE
     style:
       pointer-events: none
       opacity: >-
@@ -37,7 +37,7 @@ elements:
       left: 0%
     state_image:
       'on': /local/floorplan/demo/NOME_FILE_LUCE_BIANCA.png
-      'off': /local/floorplan/transparent.png
+      'off': /local/floorplan/transparent.png #SCARICA QUESTO FILE NELLA PAGINA PRINCIPALE
     tap_action:
       action: none
 # LUCI COLORATE
