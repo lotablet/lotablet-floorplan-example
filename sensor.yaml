@@ -1,8 +1,10 @@
 # NECESSARIO AVERE NEL FILE DI CONFIGURAZIONE questa riga: sensor: !include sensor.yaml
 # se abbiamo gia configurato dei sensori direttamente in configurazione basterà inserirli al di sotto di sensor: 
 # altrimenti aggiungerlo e incollare il codice sotto, poi successivamente formattarlo in modo adeguato con gli spazi.
+#
+#
 # Questo sensore crea un approssimazione della luce del sole a seconda della copertura nuvolosa, opacizzando la nostra immagine
-# a seconda della luce del sole.
+# di floorplan di conseguenza.
 # Potete usare l'integrazione Openweathermap o Accuweather per avere il sensre di copertura nuvolosa.
 
 - platform: template
