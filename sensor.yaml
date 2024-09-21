@@ -5,7 +5,8 @@
 #
 # Questo sensore crea un approssimazione della luce del sole a seconda della copertura nuvolosa, opacizzando la nostra immagine
 # di floorplan di conseguenza.
-# Potete usare l'integrazione Openweathermap o Accuweather per avere il sensre di copertura nuvolosa.
+# Potete usare l'integrazione Openweathermap o Accuweather per avere il sensore di copertura nuvolosa. 
+# a volte si trova nelle entità DISABILITATE quando si aggiunge l'integrazione, quindi va ABILITATO
 
 - platform: template
   sensors:
