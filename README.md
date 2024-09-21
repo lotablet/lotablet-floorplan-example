@@ -22,7 +22,7 @@ elements:
       action: none
     hold_action:
       action: none
-# LUCI BIANCHE
+    # LUCI BIANCHE
   - type: image
     entity: light.entita_luce_bianca
     image: /local/floorplan/transparent.png
@@ -40,7 +40,7 @@ elements:
       'off': /local/floorplan/transparent.png
     tap_action:
       action: none
-# LUCI COLORATE
+    # LUCI COLORATE
   - type: custom:config-template-card
     entities:
       - light.entita_luce_colorata
@@ -89,7 +89,7 @@ elements:
       top: 0%
       left: 0%
       transform: none
-# BOTTONE
+    # BOTTONE
   - type: custom:button-card
     icon: mdi:lightbulb  #cancella questa riga se hai gia impostato l'icona nelle impostazioni dell'entità o senno scegli pure quella che piu ti piace
     color_type: icon
