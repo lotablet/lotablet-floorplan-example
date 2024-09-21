@@ -22,7 +22,7 @@ elements:
       action: none
     hold_action:
       action: none
-# CODICE YAML PER LUCI BIANCHE
+# LUCI BIANCHE
   - type: image
     entity: light.entita_luce_bianca
     image: /local/floorplan/transparent.png
@@ -40,7 +40,7 @@ elements:
       'off': /local/floorplan/transparent.png
     tap_action:
       action: none
-# CODICE YAML PER LUCI COLORATE
+# LUCI COLORATE
   - type: custom:config-template-card
     entities:
       - light.entita_luce_colorata
