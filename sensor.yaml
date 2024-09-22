@@ -1,7 +1,6 @@
 # NECESSARIO AVERE NEL FILE DI CONFIGURAZIONE questa riga: sensor: !include sensor.yaml
-# se abbiamo gia configurato dei sensori direttamente in configurazione basterà inserirli al di sotto di "sensor: "
-# altrimenti aggiungere la siga "sensor: " e incollare il codice sotto, poi successivamente formattarlo in modo adeguato con gli spazi.
-#
+# se abbiamo gia configurato dei sensori direttamente in configuration.yaml basterà inserirli al di sotto di "sensor: "
+# altrimenti aggiungere la riga "sensor: " e incollare il codice sotto, poi successivamente formattarlo in modo adeguato.
 #
 # Questo sensore crea un approssimazione della luce del sole a seconda della copertura nuvolosa, opacizzando la nostra immagine
 # di floorplan di conseguenza.
