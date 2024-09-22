@@ -9,7 +9,7 @@ elements:
     entity: sun.sun
     state_image:
       above_horizon: /local/floorplan/demo/NOME_FILE_GIORNO.png
-      below_horizon: /local/floorplan/transparent.png #SCARICA QUESTO FILE NELLA PAGINA PRINCIPALE
+      below_horizon: /local/floorplan/transparent.png ############ SCARICA QUESTO FILE NELLA PAGINA PRINCIPALE
     style:
       height: 100%
       width: 100%
@@ -27,10 +27,12 @@ elements:
         :host {
           opacity: {{ states('sensor.sunlight_opacity') }};
         }
-# LUCI BIANCHE
+#
+################ CODICE PER LUCI BIANCHE #####################
+#
   - type: image
     entity: light.entita_luce_bianca
-    image: /local/floorplan/transparent.png #SCARICA QUESTO FILE NELLA PAGINA PRINCIPALE
+    image: /local/floorplan/transparent.png ############ SCARICA QUESTO FILE NELLA PAGINA PRINCIPALE
     style:
       pointer-events: none
       opacity: >-
@@ -42,10 +44,12 @@ elements:
       left: 0%
     state_image:
       'on': /local/floorplan/demo/NOME_FILE_LUCE_BIANCA.png
-      'off': /local/floorplan/transparent.png #SCARICA QUESTO FILE NELLA PAGINA PRINCIPALE
+      'off': /local/floorplan/transparent.png ############ SCARICA QUESTO FILE NELLA PAGINA PRINCIPALE
     tap_action:
       action: none
-# LUCI COLORATE
+#
+################ CODICE PER LUCI COLORATE #####################
+#
   - type: custom:config-template-card
     entities:
       - light.entita_luce_colorata
@@ -94,7 +98,9 @@ elements:
       top: 0%
       left: 0%
       transform: none
-# BOTTONE
+#
+################ CODICE PER I BOTTONI SULLA CARD #####################
+#
   - type: custom:button-card
     icon: mdi:lightbulb  #cancella questa riga se hai gia impostato l'icona nelle impostazioni dell'entità o senno scegli pure quella che piu ti piace
     color_type: icon
