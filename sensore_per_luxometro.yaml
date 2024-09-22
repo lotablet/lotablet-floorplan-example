@@ -1,0 +1,36 @@
+# TEMPLATE PER CHI HA GIA IL SENSORE PER MISURARE LA LUCE ESTERNA IN LUX
+#
+# NECESSARIO AVERE NEL FILE DI CONFIGURAZIONE questa riga: sensor: !include sensor.yaml
+# 
+# se abbiamo gia configurato dei sensori direttamente in configuration.yaml basterà inserire al di sotto di "sensor: "
+# altrimenti se non abbiamo nessun sensore, aggiungere la riga "sensor: " e incollare il codice sotto.
+#
+
+- platform: template
+  sensors:
+    sunlight_pct:
+      entity_id:
+        - sun.sun
+        - sensor.meteo_casa_copertura_nuvolosa
+      value_template: >-
+        {%- set elevation = state_attr('sun.sun', 'elevation') | float %}
+        {%- set cloud_coverage = states('sensor.meteo_casa_copertura_nuvolosa') | float %}
+        {%- set cloud_factor = (1 - (0.75 * (cloud_coverage / 100) ** 3)) %}
+        {%- set min_elevation = -6 %}
+        {%- set max_elevation = 60 %}
+
+        {%- if elevation < min_elevation %}
+          0
+        {%- elif elevation > max_elevation %}
+          {{ (100 * cloud_factor) | round(1) }}
+        {%- else %}
+          {%- set sunlight_pct = ((elevation - min_elevation) / (max_elevation - min_elevation)) * 100 %}
+          {{ (sunlight_pct * cloud_factor) | round(1) }}
+        {%- endif %}
+- platform: template
+  sensors:
+    sunlight_opacity:
+      value_template: >-
+        {%- set sunpct = states('sensor.sunlight_pct') | float %}
+        {%- set opacity = sunpct / 100 %}
+        {{ opacity | round(2) }}
