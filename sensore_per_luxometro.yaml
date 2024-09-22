@@ -6,3 +6,17 @@
 # altrimenti se non abbiamo nessun sensore, aggiungere la riga "sensor: " e incollare il codice sotto.
 #
 
+- platform: template
+  sensors:
+    sunlight_opacity:
+      value_template: >-
+        {%- set lux = states('sensor.LUXOMETRO') | float %}
+        {%- set min_lux = 0 %}
+        {%- set max_lux = 1000 %}  # <--- QUESTO DIPENDE DALLA CALIBRAZIONE DEL SENSORE, SE IN UNA GIORNATA DI MOLTO 
+        {%- if lux <= min_lux %}   #      SOLE MISURA AD ES 4000lx QUI SI METTERÀ 4000 AL POSTO DI 1000
+          0
+        {%- elif lux >= max_lux %}
+          1
+        {%- else %}
+          {{ ((lux - min_lux) / (max_lux - min_lux)) | round(2) }}
+        {%- endif %}
