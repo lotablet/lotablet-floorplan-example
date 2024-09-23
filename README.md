@@ -6,4 +6,5 @@ Ho aggiunto anche 2 sensori:
  - sensor_for_luxmeter.yaml: un template con un calcolo che converte i dati di un luxmetro per l'opacity di floorplan
 
 Tiktok: https://www.tiktok.com/@lotablet
+
 Youtube: https://youtube.com/@lotablet
