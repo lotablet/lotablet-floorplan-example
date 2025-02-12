@@ -10,9 +10,6 @@
 - platform: template
   sensors:
     sunlight_pct:
-      entity_id:
-        - sun.sun
-        - sensor.meteo_casa_copertura_nuvolosa
       value_template: >-
         {%- set elevation = state_attr('sun.sun', 'elevation') | float %}
         {%- set cloud_coverage = states('sensor.SENSORE_COPERTURA_NUVOLOSA') | float %}
