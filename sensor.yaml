@@ -3,16 +3,20 @@
 # altrimenti aggiungere la riga "sensor: " e incollare il codice sotto, poi successivamente formattarlo in modo adeguato.
 #
 # Questo sensore crea un approssimazione della luce del sole a seconda della copertura nuvolosa, opacizzando la nostra immagine
-# di floorplan di conseguenza.
+# in floorplan di conseguenza.
 # Potete usare l'integrazione Openweathermap o Accuweather per avere il sensore di copertura nuvolosa. 
 # a volte si trova nelle entità DISABILITATE quando si aggiunge l'integrazione, quindi va ABILITATO
+#
+# IMPORTANTE: aggiungere il nome del sensore della COPERTURA NUVOLOSA (riga 19) altrimenti non funzionerà nulla!
+#
+# 
 
 - platform: template
   sensors:
     sunlight_pct:
       value_template: >-
         {%- set elevation = state_attr('sun.sun', 'elevation') | float %}
-        {%- set cloud_coverage = states('sensor.SENSORE_COPERTURA_NUVOLOSA') | float %}
+        {%- set cloud_coverage = states('sensor.COPERTURA_NUVOLOSA') | float %}
         {%- set cloud_factor = (1 - (0.75 * (cloud_coverage / 100) ** 3)) %}
         {%- set min_elevation = -6 %}
         {%- set max_elevation = 60 %}
