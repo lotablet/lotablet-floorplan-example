@@ -1,3 +1,6 @@
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/yellow_img.png)](https://www.buymeacoffee.com/lotablet)
+
+
 # Un codice yaml di esempio per floorplan
 Apri qui sopra il file floorplan-example.yaml per avere un codice di esempio di floorplan 
 
